@@ -3,14 +3,17 @@
 
 numbers = []
 
-number = int (input('Please Enter a number '))
+number = int(input('Please Enter a number: '))
 
 while number != 0:
-    number.append(number)
-    number = int(input)('Enter a numer - 0 to quit)')
+    numbers.append(number)
+    number = int(input('Enter a number - 0 to quit: '))
 
 for value in numbers:
-    print (value)
+    print(value)
 
-average = float (sum(numbers))/len(numbers)
-print (f'the average is {average}')
+if numbers:  # Check if the list is not empty to avoid division by zero
+    average = float(sum(numbers)) / len(numbers)
+    print(f'The average is {average}')
+else:
+    print('No numbers were entered.')
